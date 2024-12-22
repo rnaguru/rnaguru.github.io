@@ -1,69 +1,86 @@
-/* General Styles */
-header {
-  background: #006400;
-  color: #fff;
-  padding: 1rem 0;
-}
-
-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-
-h1 {
-  margin: 0;
-}
-
-/* Navigation Menu */
-nav ul {
-  list-style: none;
+/* General Reset */
+* {
   margin: 0;
   padding: 0;
-  display: flex; /* Default horizontal layout */
-  gap: 1rem;
+  box-sizing: border-box;
 }
 
-nav a {
-  text-decoration: none;
-  color: #fff;
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
 }
 
-/* Hamburger Menu (Mobile) */
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #006400;
+  color: white;
+}
+
+.site-title h1 {
+  font-size: 1.5rem;
+}
+
+/* Menu Toggle Button */
 .menu-toggle {
-  display: none; /* Hidden by default, shown on smaller screens */
   font-size: 1.5rem;
   cursor: pointer;
+  display: block;
 }
 
-.hidden {
-  display: none;
+/* Side Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially hidden off-screen */
+  width: 250px;
+  height: 100%;
+  background: #333;
+  color: white;
+  transition: left 0.3s ease;
+  z-index: 1000;
 }
 
-nav.hidden ul {
-  display: none; /* Ensure the menu is hidden initially */
+nav ul {
+  list-style: none;
+  padding: 1rem;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-  nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #006400;
-    padding: 1rem 0;
-    z-index: 1000;
-  }
+nav ul li {
+  margin: 1rem 0;
+}
 
-  nav ul {
-    flex-direction: column; /* Make the menu vertical */
-    gap: 0.5rem;
-    text-align: center;
-  }
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
 
-  .menu-toggle {
-    display: block; /* Show the toggle icon */
-  }
+nav ul li a:hover {
+  color: #ccc;
+}
+
+/* Show Navigation */
+nav.show {
+  left: 0; /* Slide into view */
+}
+
+/* Main Content */
+main {
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
