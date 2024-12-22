@@ -1,8 +1,15 @@
-<header>
-  <div class="container">
-    <h1>Molecular Biology Lab</h1>
-    <div id="menu-toggle" class="menu-toggle">☰</div>
-    <nav id="nav-menu" class="hidden">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Molecular Biology Lab</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <nav id="side-nav" class="hidden">
       <ul>
         <li><a href="#about" class="nav-link">About Us</a></li>
         <li><a href="#research" class="nav-link">Research</a></li>
@@ -11,5 +18,34 @@
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </nav>
-  </div>
-</header>
+    <div class="site-title">
+      <h1>Molecular Biology Lab</h1>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Welcome to our molecular biology lab, where we explore the secrets of life at the molecular level.</p>
+    </section>
+    <section id="research">
+      <h2>Research</h2>
+      <p>Our lab focuses on cutting-edge research in gene editing, protein structure, and cancer biology.</p>
+    </section>
+    <section id="publications">
+      <h2>Publications</h2>
+      <p>Read about our recent findings in leading scientific journals.</p>
+    </section>
+    <section id="team">
+      <h2>Team</h2>
+      <p>Meet the dedicated team driving our research.</p>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Get in touch to learn more about our work or collaborate with us.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
