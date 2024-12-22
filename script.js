@@ -56,4 +56,4 @@ function checkForCreativeChallenges() {
 }
 
 // Initialize
-updateMazePosition();
+updateMazePosition(); 
