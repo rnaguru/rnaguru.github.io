@@ -3,48 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Graber Lab @CHEORI</title>
+  <title>The Graber Lab @CHEO Research Institute Ottawa</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <div class="menu-toggle" id="menu-toggle">☰</div>
-    <nav id="side-nav" class="hidden">
+    <h1>The Graber Lab @CHEO Research Institute Ottawa</h1>
+    <nav>
       <ul>
-        <li><a href="#about" class="nav-link">About Us</a></li>
-        <li><a href="#research" class="nav-link">Research</a></li>
-        <li><a href="#publications" class="nav-link">Publications</a></li>
-        <li><a href="#team" class="nav-link">Team</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#puzzle">Creativity Maze</a></li>
       </ul>
     </nav>
-    <div class="site-title">
-      <h1>Graber Lab @CHEORI</h1>
-    </div>
   </header>
 
-  <main>
-    <section id="about">
-      <h2>About Us</h2>
-      <p>Welcome to our molecular biology lab, where we explore the secrets of life at the molecular level.</p>
-    </section>
-    <section id="research">
-      <h2>Research</h2>
-      <p>Our lab focuses on cutting-edge research in gene editing, protein structure, and cancer biology.</p>
-    </section>
-    <section id="publications">
-      <h2>Publications</h2>
-      <p>Read about our recent findings in leading scientific journals.</p>
-    </section>
-    <section id="team">
-      <h2>Team</h2>
-      <p>Meet the dedicated team driving our research.</p>
-    </section>
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Get in touch to learn more about our work or collaborate with us.</p>
-    </section>
-  </main>
+  <section id="about">
+    <h2>About Our Lab</h2>
+    <p>We focus on cutting-edge research in molecular biology...</p>
+  </section>
+
+  <section id="research">
+    <h2>Our Research</h2>
+    <p>We are exploring the genetics of various organisms...</p>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+    <ul>
+      <li><a href="https://scholar.google.com/citations?user=tyson_graber" target="_blank">View Google Scholar Profile</a></li>
+      <!-- Add dynamic publications here using your method or API -->
+    </ul>
+  </section>
+
+  <!-- Interactive Maze Section -->
+  <section id="puzzle">
+    <h2>Creativity Maze</h2>
+    <p id="question">Solve the puzzle to unlock the path!</p>
+    <div class="maze" id="maze">
+      <div class="cell start" id="start"></div>
+      <div class="cell" id="cell1"></div>
+      <div class="cell" id="cell2"></div>
+      <div class="cell" id="cell3"></div>
+      <div class="cell" id="cell4"></div>
+      <div class="cell finish" id="finish"></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 The Graber Lab | Contact: lab@example.com</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
