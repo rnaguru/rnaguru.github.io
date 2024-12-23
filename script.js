@@ -1,12 +1,4 @@
-// Add support for tapping on cells on mobile devices
-mazeCells.forEach((cell, index) => {
-  cell.addEventListener('touchstart', () => {
-    moveToCell(index);
-  });
+// Example of a simple comic-style button click effect
+document.querySelector('.panel').addEventListener('click', function() {
+    alert("BAM! You've clicked the panel!");
 });
-
-function moveToCell(index) {
-  currentCell = index;
-  updateMazePosition();
-  checkForCreativeChallenges();
-}
