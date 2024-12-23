@@ -8,13 +8,17 @@
 /* Background */
 body {
     font-family: 'Bangers', sans-serif;
-    background: linear-gradient(60deg, #00bcd4, #004d40, #00bcd4); /* More contrasting turquoise and teal */
+    background: linear-gradient(60deg, #00bcd4, #004d40, #00bcd4); /* Turquoise Ocean colors */
     background-size: 400% 400%; /* Larger size for smooth, flowing effect */
     animation: waveAnimation 15s ease-in-out infinite; /* Slow wave-like animation */
-    color: #333;
-    padding: 20px;
+    color: #fff;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
 }
 
+/* Keyframe animation for the background wave effect */
 @keyframes waveAnimation {
     0% {
         background-position: 0% 50%;
@@ -33,86 +37,117 @@ body {
     }
 }
 
-header {
-    text-align: center;
-    margin-bottom: 20px;
+/* Root System Container */
+.root-system {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    pointer-events: none; /* Makes sure the root doesn't block interactions */
 }
 
-h1.comic-title {
-    font-size: 3em;
-    color: #ffffff; /* White for contrast */
-    text-transform: uppercase;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-}
-
-/* Panels */
-.panel {
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white for comic effect */
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 3px solid #ff6347;
-    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
-}
-
-.panel h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-/* Speech Bubble */
-.speech-bubble {
-    position: relative;
-    display: inline-block;
-    background-color: #ff6347;
-    color: white;
-    padding: 15px;
-    font-size: 1.2em;
-    border-radius: 10px;
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
-}
-
-.speech-bubble::after {
+/* Organic Root Styling */
+.root-system::before {
     content: '';
     position: absolute;
-    bottom: -15px;
+    width: 5px;
+    height: 100%;
+    background-color: #004d40; /* Dark teal */
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
-    border-width: 15px;
-    border-style: solid;
-    border-color: #ff6347 transparent transparent transparent;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2); /* Root shadow */
+    animation: growRoots 10s infinite alternate ease-in-out; /* Organic root growth animation */
 }
 
-/* Comic Style Text */
-.comic-content {
+/* Keyframe animation for growing roots */
+@keyframes growRoots {
+    0% {
+        height: 0%;
+        opacity: 0;
+    }
+    50% {
+        height: 80%;
+        opacity: 1;
+    }
+    100% {
+        height: 100%;
+        opacity: 0.6;
+    }
+}
+
+/* Bubbles (representing website sections) */
+.bubble {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #ff6347; /* Red-orange bubble color */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    opacity: 0.8;
+    pointer-events: all;
+    animation: bubbleBounce 3s ease-in-out infinite; /* Bounce animation for bubbles */
+}
+
+/* Bounce animation for bubbles */
+@keyframes bubbleBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Bubble content (titles or links) */
+.bubble h2 {
     font-size: 1.2em;
-    color: #333;
-}
-
-/* Halftone Effect using CSS gradient */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px) 0 0, radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px) 50% 50%;
-    background-size: 20px 20px;
-    opacity: 0.15;
-    pointer-events: none;
-}
-
-/* Footer */
-footer {
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
     text-align: center;
-    margin-top: 50px;
-    font-size: 1.1em;
-    color: #666;
+    margin: 0;
+}
+
+/* Positioning of Bubbles */
+#bubble-1 {
+    animation-delay: 0s;
+    top: 30%;
+}
+
+#bubble-2 {
+    animation-delay: 1s;
+    top: 50%;
+}
+
+#bubble-3 {
+    animation-delay: 2s;
+    top: 60%;
+}
+
+#bubble-4 {
+    animation-delay: 3s;
+    top: 70%;
 }
 
 /* Media Query for Smaller Screens */
 @media (max-width: 768px) {
-    body {
-        background-size: 600% 600
+    .root-system {
+        flex-direction: column;
+    }
+    .bubble {
+        width: 80px;
+        height: 80px;
+    }
+    .bubble h2 {
+        font-size: 1em;
+    }
+}
