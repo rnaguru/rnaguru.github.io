@@ -1,76 +1,92 @@
-/* General Styles */
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  margin: 0;
-  padding: 0;
+    font-family: 'Bangers', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 20px;
 }
 
-#maze {
-  display: grid;
-  grid-template-columns: repeat(3, 100px); /* 3 columns for larger screens */
-  grid-template-rows: repeat(2, 100px); /* 2 rows for the layout */
-  gap: 5px;
-  justify-content: center;
-  margin-top: 20px;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+header {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-/* Responsive Grid for Smaller Screens */
-@media (max-width: 600px) {
-  #maze {
-    grid-template-columns: repeat(3, 80px);  /* Adjust the column size for mobile */
-    grid-template-rows: repeat(2, 80px); /* Adjust the row size for mobile */
-    gap: 3px;
-  }
-
-  .cell {
-    width: 80px; /* Larger clickable areas for mobile */
-    height: 80px;
-  }
+h1.comic-title {
+    font-size: 3em;
+    color: #ff6347; /* Tomato */
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Styling the maze cells */
-.cell {
-  width: 100px;
-  height: 100px;
-  border: 2px solid #333;
-  background-color: #d3d3d3;
-  display: inline-block;
-  transition: background-color 0.3s ease;
+/* Panels */
+.panel {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 3px solid #ff6347;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
-.start {
-  background-color: green;
+.panel h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
 }
 
-.finish {
-  background-color: red;
+/* Speech Bubble */
+.speech-bubble {
+    position: relative;
+    display: inline-block;
+    background-color: #ff6347;
+    color: white;
+    padding: 15px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
 }
 
-.active {
-  background-color: yellow; /* Highlight active cell */
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 15px;
+    border-style: solid;
+    border-color: #ff6347 transparent transparent transparent;
 }
 
-/* Button and other mobile adjustments */
-button {
-  font-size: 16px;
-  padding: 10px 20px;
-  background-color: #004d66;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
+/* Comic Style Text */
+.comic-content {
+    font-size: 1.2em;
+    color: #333;
 }
 
-button:hover {
-  background-color: #00334d;
+/* Comic Strip Backgrounds (Halftone Dots) */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('halftone-pattern.png');
+    opacity: 0.2;
+    pointer-events: none;
 }
 
-/* Optional: Smooth scroll */
-html {
-  scroll-behavior: smooth;
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.1em;
+    color: #666;
 }
