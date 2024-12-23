@@ -8,7 +8,7 @@
 /* Background */
 body {
     font-family: 'Bangers', sans-serif;
-    background: linear-gradient(60deg, #00bcd4, #00796b, #00bcd4); /* Turquoise Ocean colors */
+    background: linear-gradient(60deg, #00bcd4, #004d40, #00bcd4); /* More contrasting turquoise and teal */
     background-size: 400% 400%; /* Larger size for smooth, flowing effect */
     animation: waveAnimation 15s ease-in-out infinite; /* Slow wave-like animation */
     color: #333;
@@ -111,3 +111,8 @@ footer {
     font-size: 1.1em;
     color: #666;
 }
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    body {
+        background-size: 600% 600
